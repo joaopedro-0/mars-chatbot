@@ -2,7 +2,7 @@
 
 A simple **RAG (Retrieval-Augmented Generation) chatbot** that lets you upload a PDF and ask questions about its content. Built with **Streamlit**, **LangChain**, and **Google's Gemini API**.
 
-This project was built while completing a Python chatbot development course on Udemy (provided free through TCS), originally taught using the OpenAI API. It was adapted here to use Google Gemini's free tier instead.
+This project was built while studying a GenerativeAI course on Udemy (provided through TCS), originally taught using the OpenAI API. It was adapted here to use Google Gemini's free tier instead.
 
 ## Features
 
