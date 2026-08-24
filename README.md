@@ -58,7 +58,7 @@ GOOGLE_API_KEY=your_key_here
 
 **5. Run the app**
 ```bash
-streamlit run "ChatBot AI MarS.py"
+streamlit run "chatbot_mars.py"
 ```
 
 ## Notes
