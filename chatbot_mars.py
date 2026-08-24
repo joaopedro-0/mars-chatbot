@@ -24,14 +24,11 @@ with st.sidebar:
     file = st.file_uploader("Choose a PDF file and start asking questions", type="pdf")
 
 
-
 if file is not None:
-    #Extract text from it
     with pdfplumber.open(file) as pdf:
         text = ""
         for page in pdf.pages:
             text+=page.extract_text() + "\n"
-
 
 
     text_splitter = RecursiveCharacterTextSplitter(
@@ -42,20 +39,15 @@ if file is not None:
     chunks = text_splitter.split_text(text)
 
 
-
     embeddings = GoogleGenerativeAIEmbeddings(
         model = "models/gemini-embedding-001",
         google_api_key=SecretStr(GOOGLE_API_KEY)
     )
 
 
-
     vector_store = FAISS.from_texts(chunks, embeddings)
 
-    #Get user question
     user_question = st.text_input("Type your question here")
-
-
 
 
     def format_docs(docs):
@@ -65,7 +57,6 @@ if file is not None:
         search_type = "mmr",
         search_kwargs={"k":4}
     )
-
 
 
     llm = ChatGoogleGenerativeAI(
